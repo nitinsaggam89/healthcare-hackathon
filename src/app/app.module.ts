@@ -7,7 +7,7 @@ import {CustomMaterialModule} from './material/material.module';
 
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
-  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule
+  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatSidenavModule, MatTabsModule, MatListModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +28,10 @@ import { TileGridFourComponent } from './tile-grid/tile-grid-four/tile-grid-four
 import { TileGridTwoComponent } from './tile-grid/tile-grid-two/tile-grid-two.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SideNavComponent } from './navigation/side-nav/side-nav.component';
+import { HeaderComponent } from './navigation/header/header.component';
+import { SidNavListComponent } from './navigation/sid-nav-list/sid-nav-list.component';
 
 // Add dependencies to FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Charts, Powercharts, FusionTheme)
@@ -40,27 +44,34 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, Powercharts, FusionTheme)
     TileGridThreeComponent,
     TileGridFourComponent,
     TileGridTwoComponent,
-    LoginComponent
+    LoginComponent,
+    PageNotFoundComponent,
+    SideNavComponent,
+    SidNavListComponent,
+    HeaderComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     MatGridListModule,
     FusionChartsModule,
-    //CustomMaterialModule,
-    // MatToolbarModule,
-    // MatButtonModule, 
-    // MatCardModule,
-    // MatInputModule,
-    // MatDialogModule,
-    // MatTableModule,
-    // MatMenuModule,
-    // MatIconModule,
-    // MatProgressSpinnerModule
-    CustomMaterialModule
+    MatToolbarModule,
+    MatButtonModule, 
+    MatCardModule,
+    MatInputModule,
+    MatDialogModule,
+    MatTableModule,
+    MatMenuModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule
+    //CustomMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

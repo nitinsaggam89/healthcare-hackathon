@@ -10,31 +10,20 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   
-  loginForm: FormGroup;
-  isSubmitted  =  false;
+username: string;
+password: string;
   constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
-    this.loginForm  =  this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-  });
   }
-
-  get formControls() { return this.loginForm.controls; }
   
-  login(){
-    console.log(this.loginForm.value);
-    this.isSubmitted = true;
-    if(this.loginForm.invalid){
-      return;
+  login() : void {
+    if(this.username == 'admin' && this.password == 'admin'){
+      localStorage.setItem("isLoggedIn", "true");
+     this.router.navigate(["dashboard"]);
+    }else {
+      alert("Invalid credentials");
     }
-    //this.authService.login(this.loginForm.value);
-    this.router.navigateByUrl('/admin');
   }
-
-  @Input() error: string | null;
-
-  @Output() submitEM = new EventEmitter();
 
 }
