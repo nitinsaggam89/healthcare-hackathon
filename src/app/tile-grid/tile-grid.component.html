@@ -1,21 +1,28 @@
-<mat-grid-list cols="4" rowHeight="310px">
-  <!-- <mat-grid-tile
-      *ngFor="let tile of tiles"
-      [colspan]="tile.cols"
-      [rowspan]="tile.rows"
-      [style.background]="tile.color">
-    {{tile.text}}
-  </mat-grid-tile> -->
-  <mat-grid-tile colspan="3" rowspan="1" [style.border-style]="'solid'">    
-      <app-tile-grid-one></app-tile-grid-one>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="1" rowspan="2" [style.border-style]="'solid'">
-    <app-tile-grid-two></app-tile-grid-two>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="1" rowspan="1" [style.border-style]="'solid'">
-    <app-tile-grid-three></app-tile-grid-three>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="2" rowspan="1" [style.border-style]="'solid'">
-    <app-tile-grid-four></app-tile-grid-four>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="container-fluid content">
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-card class="example-card" style="max-width: 100%; height: 400px" >           
+          <app-tile-grid-one></app-tile-grid-one>            
+        </mat-card>
+      </div>
+      <div class="col-sm-6">
+          <mat-card class="example-card" style="max-width: 100%; height: 400px" >           
+              <app-tile-grid-two></app-tile-grid-two>            
+            </mat-card>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-card class="example-card" style="max-width: 100%; height: 400px" >           
+          <app-tile-grid-three></app-tile-grid-three>            
+        </mat-card>
+      </div>
+      <div class="col-sm-6">
+          <mat-card class="example-card" style="max-width: 100%; height: 400px" >           
+              <!-- <app-tile-grid-four></app-tile-grid-four>             -->
+              <app-patient-appointment style="width:100%"></app-patient-appointment>
+            </mat-card>
+      </div>
+    </div>
+  </div>

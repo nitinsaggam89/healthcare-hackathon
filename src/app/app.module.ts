@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgRedux, NgReduxModule } from '@angular-redux/store';
  
 import {MatGridListModule} from '@angular/material/grid-list';
 import {CustomMaterialModule} from './material/material.module';
 
 import {
   MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
-  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatSidenavModule, MatTabsModule, MatListModule
+  MatToolbarModule, MatMenuModule,MatIconModule, MatProgressSpinnerModule, MatSidenavModule, MatTabsModule, MatListModule, MatPaginatorModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +33,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SideNavComponent } from './navigation/side-nav/side-nav.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidNavListComponent } from './navigation/sid-nav-list/sid-nav-list.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PatientAppointmentComponent } from './tile-grid/patient-appointment/patient-appointment.component';
+import { IAppState, rootReducer, INITIAL_STATE } from './redux/store';
+import { TestComponent } from './test/test.component';
 
 // Add dependencies to FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Charts, Powercharts, FusionTheme)
@@ -48,13 +53,17 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, Powercharts, FusionTheme)
     PageNotFoundComponent,
     SideNavComponent,
     SidNavListComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProfileComponent,
+    PatientAppointmentComponent,
+    TestComponent
   ],
   imports: [
   BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    NgReduxModule,
     AppRoutingModule,
     MatGridListModule,
     FusionChartsModule,
@@ -70,10 +79,15 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, Powercharts, FusionTheme)
     MatTabsModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatPaginatorModule
     //CustomMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor (ngRedux: NgRedux<IAppState>) {
+    ngRedux.configureStore(rootReducer, INITIAL_STATE);
+  }
+ }

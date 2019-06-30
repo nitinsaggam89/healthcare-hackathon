@@ -1,0 +1,22 @@
+<mat-grid-list cols="4" rowHeight="310px">
+    <!-- <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+      {{tile.text}}
+    </mat-grid-tile> -->
+    <!-- [style.border-style]="'solid'" -->
+    <mat-grid-tile colspan="3" rowspan="1" [style.border-style]="'groove'">    
+        <app-tile-grid-one></app-tile-grid-one>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="2" [style.border-style]="'groove'">
+      <app-tile-grid-two></app-tile-grid-two>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1" rowspan="1" [style.border-style]="'groove'">
+      <app-tile-grid-three></app-tile-grid-three>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" rowspan="1" [style.border-style]="'groove'">
+      <app-patient-appointment style="width:100%"></app-patient-appointment>
+    </mat-grid-tile>
+  </mat-grid-list>

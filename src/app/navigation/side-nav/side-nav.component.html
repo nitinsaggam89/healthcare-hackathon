@@ -1,4 +1,4 @@
-<mat-sidenav-container>
+<mat-sidenav-container style="background-color: lightcyan">
   <mat-sidenav #sidenav role="navigation">
     <!--this is a place for us to add side-nav code-->
     <app-sid-nav-list></app-sid-nav-list>
@@ -6,7 +6,7 @@
   <mat-sidenav-content>
     <!--in here all the content must reside. We will add a navigation header as well-->
     <app-header (sidenavToggle)="sidenav.toggle()"></app-header>    
-    <main>
+    <main >
       <!-- <app-tile-grid></app-tile-grid> -->
       <router-outlet></router-outlet>
     </main>

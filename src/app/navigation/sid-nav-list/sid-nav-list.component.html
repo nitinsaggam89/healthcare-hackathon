@@ -1,14 +1,17 @@
 <mat-nav-list>
-  <a mat-list-item routerLink="/dashboard">
+  <a mat-list-item routerLink="/home/dashboard">
       <mat-icon>home</mat-icon> <span class="nav-caption">Home</span>
   </a>
-  <a mat-list-item routerLink="/dashboard">
-      <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Owner Actions</span>   
+  <a mat-list-item routerLink="/home/dashboard">
+      <mat-icon>assignment_ind</mat-icon> <span class="nav-caption">Dashboard</span>   
   </a>
-  <a mat-list-item routerLink="/dashboard">
-      <mat-icon>account_balance</mat-icon><span class="nav-caption">Account Actions</span>
+  <a mat-list-item routerLink="/home/profile">
+      <mat-icon>account_balance</mat-icon><span class="nav-caption">Profile</span>
   </a>
+  <a mat-list-item routerLink="/home/test">
+        <mat-icon>logout</mat-icon><span class="nav-caption">Test</span>
+      </a>
   <a mat-list-item (click)="onSidenavClose()">
     <mat-icon>logout</mat-icon><span class="nav-caption">Logout</span>
-</a>
+  </a>
 </mat-nav-list>
